@@ -207,7 +207,7 @@ public class MainActivity extends ActionBarActivity implements DataListener {
             startActivity(intent);
             return true;
         }
-        else if (id == R.id.save_logs) {
+        else if (id == R.id.menu_save_logs) {
             saveLogToFile();
             return true;
         }
