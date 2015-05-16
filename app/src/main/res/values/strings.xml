@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">FunfTest</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="default_pipeline">
+         {"@type":"edu.mit.media.funf.pipeline.BasicPipeline",
+                 "name":"default",
+                 "version":1,
+                 "archive": {
+                    "@schedule": {"interval": 3600}
+                 };
+                 "data":[
+                        "edu.mit.media.funf.probe.builtin.WifiProbe",
+                        "edu.mit.media.funf.probe.builtin.CellTowerProbe",
+                        "edu.mit.media.funf.probe.builtin.SimpleLocationProbe",
+                        "edu.mit.media.funf.probe.builtin.BatteryProbe",
+                        "de.informatik.uni_hamburg.yildiri.funftest.customProbe.BandwidthProbe"
+                 ]
+                 }
+    </string>
+
+    <!-- Strings of the MainActivity -->
+    <string name="archive_path_and_count">Archiving saves the data as SQLite databases at the path %1$s (currently contains %2$d .db files)</string>
+    <string name="pipeline_enabled">Pipeline enabled:</string>
+    <string name="scan_failed">Couldn\'t register the probes because the pipeline is not enabled</string>
+    <string name="archive_success">Archived!</string>
+    <string name="archive_failed">"Failed to archive, pipeline is not enabled"</string>
+    <string name="data_count">Data count in pipeline: %1$d</string>
+    <string name="save_to_sd">Save Data to SD Card (archiving)</string>
+    <string name="scan_now">Scan Now</string>
+    <string name="received_data">Received data (only from manually initiated scans):</string>
+
+    <!-- Strings of the SettingsFragment -->
+    <string name="pref_funf_bandwidthprobe_title">BandwidthProbe settings</string>
+    <string name="pref_testfileURL_title">URL of the test file to be downloaded for the bandwidth measurement</string>
+    <string name="pref_testfileURL_default">http://mirror.internode.on.net/pub/test/1meg.test</string>
+
+</resources>
+

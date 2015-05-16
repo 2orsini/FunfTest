@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/pref_funf_bandwidthprobe_title"
+        android:key="pref_key_bandwidthProbe_settings">
+        <EditTextPreference
+            android:key="pref_key_testfileURL"
+            android:title="@string/pref_testfileURL_title"
+            android:defaultValue="@string/pref_testfileURL_default" />
+    </PreferenceCategory>
+</PreferenceScreen>
