@@ -31,6 +31,8 @@
     <string name="save_to_sd">Save Data to SD Card (archiving)</string>
     <string name="scan_now">Scan Now</string>
     <string name="received_data">Received data (only from manually initiated scans):</string>
+    <string name="menu_save_logs">Save logs of this app to a file</string>
+    <string name="saved_logs_success">Successfully saved the logs at %1$s</string>
 
     <!-- Strings of the SettingsFragment -->
     <string name="pref_funf_bandwidthprobe_title">BandwidthProbe settings</string>

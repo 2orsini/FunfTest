@@ -28,10 +28,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import de.informatik.uni_hamburg.yildiri.funftest.customProbe.BandwidthProbe;
+import de.informatik.uni_hamburg.yildiri.funftest.utils.LogHelper;
 import edu.mit.media.funf.FunfManager;
 import edu.mit.media.funf.json.IJsonObject;
 import edu.mit.media.funf.pipeline.BasicPipeline;
@@ -205,6 +207,10 @@ public class MainActivity extends ActionBarActivity implements DataListener {
             startActivity(intent);
             return true;
         }
+        else if (id == R.id.save_logs) {
+            saveLogToFile();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -295,6 +301,22 @@ public class MainActivity extends ActionBarActivity implements DataListener {
                 }
             });
         }
+    }
+
+    /**
+     * Initiate the saving of the logs of this app to a file on the external storage
+     */
+    private void saveLogToFile() {
+        String folder = "/" + getBaseContext().getPackageName() + "/logs/";
+        String fileName = "logcat_" + System.currentTimeMillis() + ".log";
+        final File outputFile = new File(Environment.getExternalStorageDirectory().getPath() + folder + fileName);
+        LogHelper.saveLogToFile(outputFile);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getBaseContext(), getString(R.string.saved_logs_success, outputFile.getPath()), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     /**
