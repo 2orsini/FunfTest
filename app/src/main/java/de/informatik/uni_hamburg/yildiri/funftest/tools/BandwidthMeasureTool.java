@@ -132,7 +132,7 @@ public abstract class BandwidthMeasureTool extends AsyncTask<String, Integer, Ba
      */
     public static double calcDownloadrate(long startTime, long endTime, long fileSize) {
         double diffTimeSec = (endTime - startTime) / 1000.0;
-        double fileSizeKB = fileSize / 1024.0;
+        double fileSizeKB = fileSize / 1000.0;
         double rateKBytePerSec = fileSizeKB / diffTimeSec;
         double rateKbitPerSec = rateKBytePerSec * 8.0;
         return rateKbitPerSec;
